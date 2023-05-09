@@ -1,0 +1,32 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+@*<DateCom Value="Value" ValueChanged="ValueChange" Format="yyyy/MM/dd"></DateCom>
+@Value
+<DatePicker TValue="DateTime?" Value="Value2" ValueChanged="@(ValueChange2)" Format="yyyy/MM/dd" ></DatePicker>
+@Value2*@
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+@code{
+
+    private DateTime? Value;
+    private DateTime? Value2;
+
+
+    private void ValueChange(DateTime? obj)
+    {
+        Value = obj;
+    }
+    private void ValueChange2(DateTime? obj)
+    {
+        Value2 = obj;
+    }
+
+}

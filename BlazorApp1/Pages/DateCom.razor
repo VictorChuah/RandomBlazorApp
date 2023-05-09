@@ -1,0 +1,22 @@
+﻿@*<DatePicker TValue="DateTime?" Value="Value" ValueChanged="@(OnChanged)" Format="@Format" ></DatePicker>*@
+
+@code {
+
+    [Parameter]
+    public string Format { get; set; } = "";
+
+    [Parameter]
+    public DateTime? Value { get; set; } 
+
+    [Parameter]
+    public EventCallback<DateTime?> ValueChanged { get; set; }
+
+
+
+    private void OnChanged(DateTime? obj)
+    {
+        Value = obj;
+
+        ValueChanged.InvokeAsync(obj);
+    }
+}
